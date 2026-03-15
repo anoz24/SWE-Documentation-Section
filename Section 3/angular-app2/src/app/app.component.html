@@ -1,0 +1,11 @@
+<h1>Welcome</h1>
+
+<app-student></app-student>
+
+<p *ngIf="isVisable">my name is {{ name }} and my age is {{ age }} </p>
+
+<p>{{ age >= 20 ? 'allowed' : 'not allowed'}}</p>
+
+<button [disabled]="isDisabled" (click)="whenClicked()">click me</button>
+
+<input type="text" (input)="onTyping($event)">
