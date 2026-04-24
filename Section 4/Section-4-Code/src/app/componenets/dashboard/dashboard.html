@@ -1,0 +1,22 @@
+<div class="container" style="max-width: 600px; margin: auto; padding: 20px; font-family: sans-serif;">
+  <h2 style="color: #2c3e50;">Team Management</h2>
+
+  <div style="background: #f4f4f4; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+    <form [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+      <input formControlName="memberName" placeholder="Enter Student Name" style="padding: 10px; width: 60%;">
+      <button type="submit" [disabled]="memberForm.invalid" style="padding: 10px; cursor: pointer;">Add Member</button>
+      <p *ngIf="memberForm.get('memberName')?.invalid && memberForm.get('memberName')?.touched" style="color: red; font-size: 0.8rem;">
+        Name must be at least 3 characters.
+      </p>
+    </form>
+  </div>
+
+  <div *ngIf="teams$ | async as teamsList; else loading">
+    <div *ngFor="let t of teamsList" [@listAnimation] class="team-card" style="padding: 15px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between;">
+      <span><strong>{{ t.name }}</strong></span>
+      <a [routerLink]="['/team', t.id]" style="color: #3498db; text-decoration: none;">View Profile →</a>
+    </div>
+  </div>
+
+  <ng-template #loading><p>Fetching students...</p></ng-template>
+</div>

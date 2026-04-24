@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title> Section 3 </title>
+</head>
+
+<body>
+<h1>Welcome to Section Number 3 in angular</h1>
+<p>Current count : count {{count()}}</p>
+<button (click)="increment()">Click to increase</button>
+<!--
+Think of *ngIf as a security guard standing at the door of your HTML. It decides whether an element is allowed to exist on the page or not.
+
+1. The Core Concept
+In standard HTML, everything you write is always there. In Angular, *ngIf lets you create Dynamic UI. It evaluates a "True" or "False" condition:
+
+If True: The guard lets the HTML element enter the page.
+
+If False: The guard removes the element entirely from the code (it's not just hidden; it's gone).
+-->
+<!--
+<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+
+  <div *ngIf="!auth.isLoggedIn()">
+    <h2>Helwan University Portal</h2>
+    <input #uName type="text" placeholder="Enter Username">
+    <button (click)="handleLogin(uName.value)">Login</button>
+  </div>
+
+  <div *ngIf="auth.isLoggedIn()">
+    <h2>Welcome, {{ auth.currentUser() }}!</h2>
+    <p>You are successfully connected to the Auth Service.</p>
+    <button (click)="auth.logout()" style="color: red;">Logout</button>
+  </div>
+
+</div>
+-->
+</body>
+
+</html>
+
+
